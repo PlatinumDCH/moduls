@@ -1,0 +1,14 @@
+
+добвление пути для запуска программ
+===================================
+poetry self add poetry-dotenv-plugin
+touch .env
+echo ".env" >> .gitignore
+pwd
+echo "PYTHONPATH=$(pwd)/moduls" >> .env
+
+check
+import os
+print(os.getenv('PYTHONPATH'))
+
+запуск прогорам через poetry poetry run python name_program
