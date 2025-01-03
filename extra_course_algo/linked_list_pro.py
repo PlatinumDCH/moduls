@@ -136,6 +136,12 @@ class BaseDubleLinkedList(ABC):
             текущий елемент = next
         """
         pass
+
+    @classmethod
+    def delete(self, data):
+        """удалить елмент""" 
+        pass
+
 class LengInterface(ABC):
 
     @classmethod
@@ -300,7 +306,37 @@ class DoubleLinkedList(BaseDubleLinkedList):
                 return 'element aded'
             current = current.next
 
+    def delete(self, data):
+        self._check_list(data)
+        current = self.head
 
+        while current:
+            if current.data == data:
+                if current == self.head:
+                    self.head = current.next
+                    if self.head:
+                        self.head.prev = None
+                    else:
+                        self.tail = None
+                
+                elif current == self.tail:
+                    self.tail = current.prev
+                    self.tail.next = None
+                
+                else:
+                    current.prev.next = current.prev
+                    current.next.prev = current.prev
+                
+                self.lenght_manager.decrement()
+                return 'Element removed'
+            current = current.next
+
+    def get_tail(self):
+        return self.tail.data
+    
+    def get_head(self):
+        return self.head.data
+    
 if __name__ == '__main__':
     length_manager = Lenght()
     dll = DoubleLinkedList(length_manager)
@@ -309,10 +345,11 @@ if __name__ == '__main__':
     dll.add_to_begin(0)
     dll.display()  # Output: [Head]0 -> 1 -> 2 -> [Tail]
 
-
-    print(dll.insert_after(2,-1))
+    dll.delete(0)
     dll.display()
+    print(dll.get_head())
 
+    print(dll.get_tail())
     
     
 
