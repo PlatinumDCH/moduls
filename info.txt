@@ -12,3 +12,13 @@ import os
 print(os.getenv('PYTHONPATH'))
 
 запуск прогорам через poetry poetry run python name_program
+
+Создание нового виртуальноно окружения
+======================================
+cd ~poject/path
+pop install poetry *
+poetry init
+poetry install
+poetry config --list
+  select new env VSCode
+poetry shell
