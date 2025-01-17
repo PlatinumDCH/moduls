@@ -22,3 +22,16 @@ poetry install
 poetry config --list
   select new env VSCode
 poetry shell
+
+Создание контейнрера docker postgresql
+======================================
+docker run --name test-postgres -e POSTGRES_USER=testuser -e POSTGRES_PASSWORD=testpass -e POSTGRES_DB=testdb -p 5432:5432 
+--name test-postgres: Название контейнера.
+-e POSTGRES_USER=testuser: Имя пользователя.
+-e POSTGRES_PASSWORD=testpass: Пароль пользователя.
+-e POSTGRES_DB=testdb: Имя создаваемой базы данных.
+-p 5432:5432: Проброс порта для локального доступа.
+-d postgres:15: Запуск контейнера в фоновом режиме с образом PostgreSQL версии 15.
+
+проверить что контейнер запущен
+docker ps
