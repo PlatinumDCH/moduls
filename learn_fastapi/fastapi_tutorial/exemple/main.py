@@ -1,12 +1,13 @@
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import text
 from fastapi import FastAPI, Depends, HTTPException
-from fastapi_tutorial.exemple.rout_contact import router
+from fastapi_tutorial.exemple.rout_contact import router as contact_rout
 from fastapi_tutorial.exemple.db import get_connection_db
-
+from fastapi_tutorial.exemple.rout_user import router as user_rout
 app = FastAPI()
 
-app.include_router(router=router, prefix="/api")
+app.include_router(router=contact_rout, prefix="/api")
+app.include_router(router=user_rout, prefix='/api')
 
 @app.get('/')
 async def index():

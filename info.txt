@@ -43,4 +43,7 @@ alembic init < name folder >
 alembic revision --autogenerate -m "commit"
 alembic upgrade head
 
-
+откат бд
+alembic history
+alembic downgrade <revision> откат к определенной версии
+alembic downgrade -1 шаг назад

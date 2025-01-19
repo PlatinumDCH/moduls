@@ -1,0 +1,12 @@
+close
+commit
+rollback
+cursor
+    close
+    execude (operations, parametesr)
+    executemany(opetarions, seq_of_parameters)
+    fetchone
+    fetchmany(size=cursor.arratsize)
+    fetchall
+
+
