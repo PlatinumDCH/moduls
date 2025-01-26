@@ -1,0 +1,5 @@
+[1]
+walk_and_display folder and files - {walk_dir, walk_color_dir}
+-- py name_script.py ' path/to/folder '
+[2]
+

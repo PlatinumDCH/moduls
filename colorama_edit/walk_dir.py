@@ -23,5 +23,11 @@ def display_tree(path: Path, indent: str = "", prefix: str = "") -> None:
 
 
 if __name__ == "__main__":
-    root = Path("/Users/plarium/Develop/moduls")
-    display_tree(root)
+    import sys
+
+    if len(sys.argv) != 2:
+        sys.exit(1)
+
+    path = Path(sys.argv[1])
+
+    display_tree(path)

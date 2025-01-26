@@ -25,6 +25,7 @@ class IDirectoryPrinter(Protocol):
     def print(self, path:Path, ident:str='')->None: ...
 
 class DirectoryPrinter(IDirectoryPrinter):
+    """exemple description"""
     def __init__(self, colorizer: IFileNameCplorizer):
         self.colorizer = colorizer
     
