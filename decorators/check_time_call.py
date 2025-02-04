@@ -22,3 +22,4 @@ def exemple_function(timer:int):
 
 result_function = exemple_function(5)
 print(result_function)
+
